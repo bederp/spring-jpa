@@ -1,0 +1,1 @@
+INSERT INTO MOVIE (id, title, category, length, description, required_age) VALUES (5, 'After', 'COMEDY', 106, 'Ekranizacja bestselerowej....', 18)
