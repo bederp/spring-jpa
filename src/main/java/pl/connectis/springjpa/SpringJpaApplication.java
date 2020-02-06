@@ -4,14 +4,14 @@ import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import pl.connectis.springjpa.domain.Movie;
-import pl.connectis.springjpa.repository.MovieRepository;
+import pl.connectis.springjpa.domain.MovieCategory;
+import pl.connectis.springjpa.service.MovieService;
 
 @SpringBootApplication
 @AllArgsConstructor
 public class SpringJpaApplication implements CommandLineRunner {
 
-	private MovieRepository movieRepository;
+	private MovieService movieService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringJpaApplication.class, args);
@@ -19,6 +19,6 @@ public class SpringJpaApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) {
-		Iterable<Movie> all = movieRepository.findAll();
+		movieService.updateMovie(5L, "toString()", MovieCategory.HORROR, 123, "opis", 5);
 	}
 }

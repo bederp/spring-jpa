@@ -67,9 +67,6 @@ public class SimpleMovieService implements MovieService {
         Optional<Movie> movieOptional = movieRepository.findById(movieId);
         movieOptional.orElseThrow(() -> new EntityNotFoundException("Movie id:" + movieOptional + " doesn't exist"))
                 .updateMovie(title, category, length, description, requiredAge);
-
-//        movieRepository.save(movieOptional.get());
-
     }
 
 
